@@ -1,6 +1,6 @@
-type MenuOptions = "" | "all" | "dog" | "cat" | "fish";
+type TMenuOptions = "" | "all" | "dog" | "cat" | "fish";
 
-export const createMenuObject = (activeMenu: MenuOptions) => {
+export const createMenuObject = (activeMenu: TMenuOptions) => {
   let returnObject = {
     all: false,
     dog: false,

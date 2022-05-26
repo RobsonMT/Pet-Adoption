@@ -23,6 +23,7 @@
     "@types/node": "^16.11.10",
     "nodemon": "^2.0.16",
     "sucrase": "^3.21.0",
+    "ts-node": "10.7.0",
     "ts-node-dev": "^1.1.8",
     "typescript": "^4.7.2"
   }

@@ -3,16 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PetDevShop - O petshop do dev</title>
+    <title>PetShop</title>
     <link rel="stylesheet" href="/css/style.css" />
-    <link rel="icon" type="image/png" href="/images/favicon.png" />
+    <link rel="icon" type="image/png" href="/icons/favicon.png" />
 </head>
 <body>
-<header>
+<header id="home">
     <div class="container">
-        <a href="/">PetDevShop</a>
+        <a href="/"><img src="/icons/favicon.png" class="logo-icon"/>PetShop</a>
         <form method="GET" action="/search">
-            <input type="search" name="q" placeholder="Pesquise por raça" />
+            <input type="search" name="search" placeholder="Pesquise por raça" value="{{query}}"/>
         </form>
     </div>
 </header>
