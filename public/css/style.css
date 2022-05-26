@@ -4,7 +4,7 @@
   --bglink: rgba(0, 0, 0, 0.3);
   --darkbg: #fff;
   --lightbg: #000;
-  --lighter: #444;
+  --lighter: rgba(73, 69, 69, 0.733);
 }
 
 * {
@@ -17,14 +17,14 @@ html {
 body {
   font-family: Arial, Helvetica, sans-serif;
   background-color: var(--pagebg);
-  animation-name: hilight;
+  animation-name: transition;
   animation-duration: 2s;
   animation-fill-mode: ease;
   animation-iteration-count: 1;
   transition-delay: 0.01s;
   transform: opacity 2s ease;
 }
-@keyframes hilight {
+@keyframes transition {
   0% {
     opacity: 0.5;
     x: -100;
@@ -110,13 +110,6 @@ nav ul li.active a::after {
   background: var(--lighter);
   background-size: cover;
   background-position: center;
-  /* display: flex;
-  justify-content: center;
-  align-items: center;
-  color: var(--darkbg);
-  font-size: 36px;
-  font-weight: bold;
-  text-shadow: 1px 1px 1px var(--lighter); */
   margin-bottom: 30px;
 }
 h2 {
@@ -161,6 +154,34 @@ footer {
   font-size: 16px;
   color: var(--main);
 }
+.arrow-up {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  transform: scaleY(-1);
+  width: 20px;
+}
+.back-to-top {
+  background: var(--main);
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+  padding: 6px;
+  clip-path: stroke-box;
+  border-radius: 5px;
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.3s;
+  transform: translateY(100%);
+  width: 20px;
+  height: 20px;
+}
+.back-to-top.show {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(0);
+}
+
 @media (max-width: 900px) {
   .list {
     grid-template-columns: repeat(4, 1fr);
@@ -176,7 +197,6 @@ footer {
 @media (max-width: 500px) {
   .banner {
     height: 350px;
-    /* font-size: 29px; */
   }
   h2 {
     font-size: 18px;

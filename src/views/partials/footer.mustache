@@ -1,5 +1,23 @@
 <footer class="container">
-    Feito com ❤ Robson F Martins
+  <small>By Robson F. Martins - <a href="https://github.com/RobsonMT">RobsonMT</a></small>
 </footer>
+<a href="#home" class="back-to-top"><img class="arrow-up" src="/icons/arrow-up.png"/></a>
+<script>
+
+const backToTopButton = document.querySelector(".back-to-top");
+
+function backToTop() {
+  if (window.scrollY >= 560) {
+    backToTopButton?.classList.add("show");
+  } else {
+    backToTopButton?.classList.remove("show");
+  }
+}
+
+window.addEventListener("scroll", function () {
+  backToTop();
+});
+
+</script>
 </body>
 </html>
