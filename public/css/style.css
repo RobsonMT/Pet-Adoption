@@ -11,9 +11,30 @@
   margin: 0;
   padding: 0;
 }
+html {
+  scroll-behavior: smooth;
+}
 body {
   font-family: Arial, Helvetica, sans-serif;
   background-color: var(--pagebg);
+  animation-name: hilight;
+  animation-duration: 2s;
+  animation-fill-mode: ease;
+  animation-iteration-count: 1;
+  transition-delay: 0.01s;
+  transform: opacity 2s ease;
+}
+@keyframes hilight {
+  0% {
+    opacity: 0.5;
+    x: -100;
+    y: 0;
+  }
+  100% {
+    opacity: 1;
+    x: 0;
+    y: -100;
+  }
 }
 .container {
   max-width: 1100px;
@@ -46,38 +67,56 @@ header input {
 nav {
   background: var(--main);
   color: var(--darkbg);
-  padding: 15px 0;
+  padding: 10px 0;
+  box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.15);
 }
-ul {
+nav ul {
   list-style: none;
   max-width: 1100px;
   margin: auto;
   display: flex;
   justify-content: space-around;
 }
-ul li a {
+nav ul li {
+  text-align: center;
+}
+nav ul li a {
   color: var(--darkbg);
   text-decoration: none;
-  padding: 5px 15px;
-  border-radius: 10px;
+  transition: color 0.2s;
+  position: relative;
 }
-ul li.active a,
-ul li:hover a {
-  background: var(--bglink);
+nav ul li a:hover,
+nav ul li.active a {
+  color: var(--darkbg);
+  text-shadow: 1px 1px 1px var(--lighter);
 }
-
+nav ul li a::after {
+  content: "";
+  width: 0%;
+  height: 2px;
+  background-color: var(--darkbg);
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  transition: width 0.2s;
+}
+nav ul li a:hover::after,
+nav ul li.active a::after {
+  width: 100%;
+}
 .banner {
-  height: 300px;
+  height: 320px;
   background: var(--lighter);
   background-size: cover;
   background-position: center;
-  display: flex;
+  /* display: flex;
   justify-content: center;
   align-items: center;
   color: var(--darkbg);
   font-size: 36px;
   font-weight: bold;
-  text-shadow: 1px 1px 1px var(--lighter);
+  text-shadow: 1px 1px 1px var(--lighter); */
   margin-bottom: 30px;
 }
 h2 {
@@ -122,7 +161,6 @@ footer {
   font-size: 16px;
   color: var(--main);
 }
-
 @media (max-width: 900px) {
   .list {
     grid-template-columns: repeat(4, 1fr);
@@ -137,8 +175,8 @@ footer {
 
 @media (max-width: 500px) {
   .banner {
-    height: 200px;
-    font-size: 29px;
+    height: 350px;
+    /* font-size: 29px; */
   }
   h2 {
     font-size: 18px;
