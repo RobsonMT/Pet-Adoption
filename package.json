@@ -9,6 +9,7 @@
     "node": ">=17"
   },
   "scripts": {
+    "tsc": "tsc",
     "test": "echo \"Error: no test espicified\" && exit 1",
     "dev": "nodemon -e ts,json,mustache src/server.ts",
     "start": "node dist/server.js",
