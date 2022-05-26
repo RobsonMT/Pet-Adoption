@@ -16,10 +16,8 @@ server.use(express.static(path.join(__dirname, "../public")));
 
 registerRouters(server);
 
-server.listen(process.env.PORT ?? 3000);
+server.listen(process.env.PORT);
 
 server.listen(() => {
-  const PORT = process.env.PORT ?? 3000;
-
-  console.log(`App running!\nhttp://localhost:${PORT}/`);
+  console.log(`App running!\nhttp://localhost:${process.env.PORT}/`);
 });
