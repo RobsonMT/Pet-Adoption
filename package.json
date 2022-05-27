@@ -6,7 +6,9 @@
   "author": "RobsonMT <rbsndev3@gmail.com>",
   "license": "MIT",
   "engines": {
-    "node": ">=17"
+    "node": "18.2.x",
+    "yarn": "1.22.x",
+    "npm": "8.9.x"
   },
   "scripts": {
     "tsc": "tsc",

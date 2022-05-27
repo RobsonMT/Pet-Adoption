@@ -160,6 +160,7 @@ footer {
   background-size: contain;
   transform: scaleY(-1);
   width: 20px;
+  filter: invert(100%);
 }
 .back-to-top {
   background: var(--main);
